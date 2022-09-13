@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import Skills from './components/Skills'
 import { useState } from 'react'
 
 export default function Home() {
@@ -31,13 +32,18 @@ export default function Home() {
         </div>
       </div>
 
+      <Skills dark={dark} />
+
       <style jsx>
         {`
           .container {
             height: 100vh;
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
+            width: calc(100vw - 40px);
             max-width: 1600px;
-            margin: 0 auto;
+            margin: 10px auto;
+            border: 2px solid ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-s)'};
+            border-radius: 55px;
             transition: background-color 0.5s ease;
           }
           .main {
@@ -61,6 +67,7 @@ export default function Home() {
           }
           h2 {
             font-family: var(--ff-mont);
+            font-size: clamp(1.5rem, 0.2143rem + 2.2857vw, 2.5rem);
             font-weight: 600;
             color: ${dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
           }
@@ -119,6 +126,14 @@ export default function Home() {
               min-width: 300px;
               max-width: 500px;
             }
+          }
+        `}
+      </style>
+      <style jsx global>
+        {`
+          body {
+            background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
+            transition: background-color var(--transition);
           }
         `}
       </style>

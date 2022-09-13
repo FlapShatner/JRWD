@@ -67,9 +67,20 @@ a {
   --ff-rubik: "Rubik", sans-serif;
 
   --clr-bg-l: hsl(30, 100%, 99.2%);
+  --clr-bg-d: hsl(120, 1.5%, 12.7%);
+
+
+  --clr-text-dp: hsl(30, 100%, 99.2%);
+  --clr-text-ds: hsl(26, 10.4%, 86.9%);
+
+  --shadow: hsla(26, 10.4%, 86.9%, 80%);
+  --shadow-blue: hsl(185, 100%, 49.2%);
+  --shadow-pink: hsl(299, 100%, 46.9%);
 
   --clr-text-p: hsl(0, 0%, 28.2%);
   --clr-text-s: hsl(0, 0%, 31.4%);
 
-  --gradient: linear-gradient(45deg, hsl(185, 100%, 49.2%), hsl(299, 100%, 46.9%))
+  --gradient: linear-gradient(45deg, hsl(185, 100%, 49.2%), hsl(299, 100%, 46.9%));
+
+  --transition: 0.5s ease;
 }

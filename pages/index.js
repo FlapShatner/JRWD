@@ -12,9 +12,12 @@ export default function Home() {
     <>
       <div className='container'>
         <Header dark={dark} toggleDark={() => setDark(!dark)} />
+        <div className='mobile'>
+          <h1>Jordan Roberts</h1>
+        </div>
         <div className='main'>
           <div className='col bio'>
-            <h1>Jordan Roberts</h1>
+            <h1 className='desktop'>Jordan Roberts</h1>
             <h2>Full stack web developer</h2>
             <div className='text'>
               <p>
@@ -32,7 +35,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Skills dark={dark} />
+      <Skills id='skills' dark={dark} />
 
       <style jsx>
         {`
@@ -52,7 +55,7 @@ export default function Home() {
             justify-content: center;
           }
           .col {
-            padding: 8% 0 0 0;
+            padding: 10% 0 0 0;
           }
           .image {
           }
@@ -65,6 +68,10 @@ export default function Home() {
             font-size: clamp(4rem, 2.7143rem + 2.2857vw, 5rem);
             color: ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'};
           }
+          .desktop {
+            display: block;
+          }
+
           h2 {
             font-family: var(--ff-mont);
             font-size: clamp(1.5rem, 0.2143rem + 2.2857vw, 2.5rem);
@@ -106,6 +113,9 @@ export default function Home() {
             animation: gradient 5s ease infinite;
             color: transparent;
           }
+          .mobile {
+            display: none;
+          }
           @keyframes gradient {
             0% {
               background-position: 0% 100%;
@@ -118,13 +128,39 @@ export default function Home() {
             }
           }
 
-          @media (max-width: 1115px) {
+          @media (max-width: 1250px) {
             h1 {
-              font-size: 48px;
+              font-size: 52px;
             }
             .bio {
               min-width: 300px;
               max-width: 500px;
+            }
+            .col {
+              padding-top: 18%;
+            }
+          }
+          @media (max-width: 950px) {
+            .desktop {
+              display: none;
+            }
+            .mobile {
+              display: flex;
+              flex-direction: column;
+              padding: 7rem 7% 2rem;
+            }
+
+            .main {
+              gap: 1rem;
+            }
+            .col {
+              padding-top: 0%;
+            }
+            h1 {
+              font-size: 68px;
+            }
+            h2 {
+              font-size: 28px;
             }
           }
         `}

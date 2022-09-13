@@ -87,7 +87,7 @@ export default function Skills({ dark }) {
           .cards {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            margin: 10px;
+            margin: 15px;
           }
           .card {
             border-radius: 55px;

@@ -140,6 +140,11 @@ export default function Header({ toggleDark, dark }) {
           padding-left: 5px;
           gap: 2px;
         }
+        @media (max-width: 950px) {
+          a {
+            font-size: 18px;
+          }
+        }
       `}</style>
     </>
   )

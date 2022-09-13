@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import { front, back, dev } from '../../data/skills'
+import { front1, front2, back1, back2, dev1, dev2 } from '../../data/skills'
 
 export default function Skills({ dark }) {
   const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-s)'
@@ -13,34 +13,64 @@ export default function Skills({ dark }) {
         <div className='card frontend'>
           <h3>Frontend</h3>
           <ul>
-            {front.map((s) => (
-              <li key={s.title}>
-                <img className='svg' src={s.img} />
-                {s.title}
-              </li>
-            ))}
+            <div className='one'>
+              {front1.map((s) => (
+                <li key={s.title}>
+                  <img className='svg' src={s.img} />
+                  {s.title}
+                </li>
+              ))}
+            </div>
+            <div className='two'>
+              {front2.map((s) => (
+                <li key={s.title}>
+                  <img className='svg' src={s.img} />
+                  {s.title}
+                </li>
+              ))}
+            </div>
           </ul>
         </div>
         <div className='card backend'>
           <h3>Backend</h3>
           <ul>
-            {back.map((s) => (
-              <li key={s.title}>
-                <img className='svg' src={s.img} />
-                {s.title}
-              </li>
-            ))}
+            <div className='one'>
+              {back1.map((s) => (
+                <li key={s.title}>
+                  <img className='svg' src={s.img} />
+                  {s.title}
+                </li>
+              ))}
+            </div>
+            <div className='two'>
+              {back2.map((s) => (
+                <li key={s.title}>
+                  <img className='svg' src={s.img} />
+                  {s.title}
+                </li>
+              ))}
+            </div>
           </ul>
         </div>
         <div className='card tools'>
           <h3>Dev Tools</h3>
           <ul>
-            {dev.map((s) => (
-              <li key={s.title}>
-                <img className='svg' src={s.img} />
-                {s.title}
-              </li>
-            ))}
+            <div className='one'>
+              {dev1.map((s) => (
+                <li key={s.title}>
+                  <img className='svg' src={s.img} />
+                  {s.title}
+                </li>
+              ))}
+            </div>
+            <div className='two'>
+              {dev2.map((s) => (
+                <li key={s.title}>
+                  <img className='svg' src={s.img} />
+                  {s.title}
+                </li>
+              ))}
+            </div>
           </ul>
         </div>
       </div>
@@ -75,6 +105,9 @@ export default function Skills({ dark }) {
             border-bottom: 2px solid ${txtClrSec};
           }
           ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             width: max-content;
             margin: 0 auto;
           }

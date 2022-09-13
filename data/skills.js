@@ -1,4 +1,4 @@
-export const front = [
+export const front1 = [
   {
     title: 'HTML',
     img: '/img/html.svg',
@@ -19,6 +19,8 @@ export const front = [
     title: 'Next.js',
     img: '/img/next.svg',
   },
+]
+export const front2 = [
   {
     title: 'Redux',
     img: '/img/redux.svg',
@@ -37,7 +39,7 @@ export const front = [
   },
 ]
 
-export const dev = [
+export const dev1 = [
   {
     title: 'Git',
     img: '/img/git.svg',
@@ -54,6 +56,8 @@ export const dev = [
     title: 'Github',
     img: '/img/github.svg',
   },
+]
+export const dev2 = [
   {
     title: 'Terminal',
     img: '/img/powershell.svg',
@@ -68,7 +72,7 @@ export const dev = [
   },
 ]
 
-export const back = [
+export const back1 = [
   {
     title: 'Node.js',
     img: '/img/nodejs.svg',
@@ -81,6 +85,8 @@ export const back = [
     title: 'SQL',
     img: '/img/mysql.svg',
   },
+]
+export const back2 = [
   {
     title: 'Express',
     img: '/img/express.svg',

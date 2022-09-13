@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 
-export function Header({ toggleDark, dark }) {
+export default function Header({ toggleDark, dark }) {
   const darkToggle = dark ? 'Light' : 'Dark'
 
   const logo = '{J}'

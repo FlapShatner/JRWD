@@ -8,74 +8,79 @@ export default function Skills({ dark }) {
 
   return (
     <>
-      <h2>Skills and Tools</h2>
-      <div className='cards'>
-        <div className='card frontend'>
-          <h3>Frontend</h3>
-          <ul>
-            <div className='one'>
-              {front1.map((s) => (
-                <li key={s.title}>
-                  <img className='svg' src={s.img} />
-                  {s.title}
-                </li>
-              ))}
-            </div>
-            <div className='two'>
-              {front2.map((s) => (
-                <li key={s.title}>
-                  <img className='svg' src={s.img} />
-                  {s.title}
-                </li>
-              ))}
-            </div>
-          </ul>
-        </div>
-        <div className='card backend'>
-          <h3>Backend</h3>
-          <ul>
-            <div className='one'>
-              {back1.map((s) => (
-                <li key={s.title}>
-                  <img className='svg' src={s.img} />
-                  {s.title}
-                </li>
-              ))}
-            </div>
-            <div className='two'>
-              {back2.map((s) => (
-                <li key={s.title}>
-                  <img className='svg' src={s.img} />
-                  {s.title}
-                </li>
-              ))}
-            </div>
-          </ul>
-        </div>
-        <div className='card tools'>
-          <h3>Dev Tools</h3>
-          <ul>
-            <div className='one'>
-              {dev1.map((s) => (
-                <li key={s.title}>
-                  <img className='svg' src={s.img} />
-                  {s.title}
-                </li>
-              ))}
-            </div>
-            <div className='two'>
-              {dev2.map((s) => (
-                <li key={s.title}>
-                  <img className='svg' src={s.img} />
-                  {s.title}
-                </li>
-              ))}
-            </div>
-          </ul>
+      <div className='wrapper'>
+        <h2>Skills and Tools</h2>
+        <div className='cards'>
+          <div className='card frontend'>
+            <h3>Frontend</h3>
+            <ul>
+              <div className='one'>
+                {front1.map((s) => (
+                  <li key={s.title}>
+                    <img className='svg' src={s.img} />
+                    {s.title}
+                  </li>
+                ))}
+              </div>
+              <div className='two'>
+                {front2.map((s) => (
+                  <li key={s.title}>
+                    <img className='svg' src={s.img} />
+                    {s.title}
+                  </li>
+                ))}
+              </div>
+            </ul>
+          </div>
+          <div className='card backend'>
+            <h3>Backend</h3>
+            <ul>
+              <div className='one'>
+                {back1.map((s) => (
+                  <li key={s.title}>
+                    <img className='svg' src={s.img} />
+                    {s.title}
+                  </li>
+                ))}
+              </div>
+              <div className='two'>
+                {back2.map((s) => (
+                  <li key={s.title}>
+                    <img className='svg' src={s.img} />
+                    {s.title}
+                  </li>
+                ))}
+              </div>
+            </ul>
+          </div>
+          <div className='card tools'>
+            <h3>Dev Tools</h3>
+            <ul>
+              <div className='one'>
+                {dev1.map((s) => (
+                  <li key={s.title}>
+                    <img className='svg' src={s.img} />
+                    {s.title}
+                  </li>
+                ))}
+              </div>
+              <div className='two'>
+                {dev2.map((s) => (
+                  <li key={s.title}>
+                    <img className='svg' src={s.img} />
+                    {s.title}
+                  </li>
+                ))}
+              </div>
+            </ul>
+          </div>
         </div>
       </div>
       <style jsx>
         {`
+          .wrapper {
+            width: 100%;
+          }
           h2 {
             font-family: var(--ff-poppins);
             color: ${txtClr};
@@ -85,14 +90,15 @@ export default function Skills({ dark }) {
             margin: 1rem;
           }
           .cards {
+            max-width: 1600px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            margin: 15px;
+            margin: 0 auto;
           }
           .card {
             border-radius: 55px;
             border: 2px solid ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-s)'};
-            padding-bottom: 1rem;
+            padding-bottom: 3rem;
           }
           h3 {
             display: block;

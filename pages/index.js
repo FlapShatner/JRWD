@@ -1,8 +1,9 @@
 import Header from './components/Header'
+import Github from './components/Github'
 import Skills from './components/Skills'
 import { useState } from 'react'
 
-export default function Home() {
+export default function Home({ data, repos }) {
   const imageText = '</>'
 
   const email = 'Jordan@jRobertsWeb.dev'
@@ -10,39 +11,46 @@ export default function Home() {
 
   return (
     <>
-      <div className='container'>
-        <Header dark={dark} toggleDark={() => setDark(!dark)} />
-        <div className='mobile'>
-          <h1>Jordan Roberts</h1>
-        </div>
-        <div className='main'>
-          <div className='col bio'>
-            <h1 className='desktop'>Jordan Roberts</h1>
-            <h2>Full stack web developer</h2>
-            <div className='text'>
-              <p>
-                In 2021 I discovered my passion for code and thus began a journey to learn as much as I can about web
-                development.
-              </p>
-              <p>I love honing my skills and making things for the Internet. </p>
+      <div className='wrapper'>
+        <div className='container'>
+          <Header dark={dark} toggleDark={() => setDark(!dark)} />
+          <div className='mobile'>
+            <h1>Jordan Roberts</h1>
+          </div>
+          <div className='main'>
+            <div className='col bio'>
+              <h1 className='desktop'>Jordan Roberts</h1>
+              <h2>Full stack web developer</h2>
+              <div className='text'>
+                <p>
+                  In 2021 I discovered my passion for code and thus began a journey to learn as much as I can about web
+                  development.
+                </p>
+                <p>I love honing my skills and making things for the Internet. </p>
+              </div>
+
+              <p className='email'>{email}</p>
             </div>
-
-            <p className='email'>{email}</p>
-          </div>
-          <div className='col image'>
-            <span>{imageText}</span>
+            <div className='col image'>
+              <span>{imageText}</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Skills id='skills' dark={dark} />
+        <Skills id='skills' dark={dark} />
+
+        <Github data={data} repos={repos} dark={dark} />
+      </div>
 
       <style jsx>
         {`
+          .wrapper {
+            padding: 0 1rem;
+          }
           .container {
             height: 100vh;
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
-            width: calc(100vw - 40px);
+            width: 100%;
             max-width: 1600px;
             margin: 10px auto;
             border: 2px solid ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-s)'};
@@ -175,4 +183,38 @@ export default function Home() {
       </style>
     </>
   )
+}
+
+export async function getStaticProps(ctx) {
+  const API_URL = 'https://api.github.com/users/FlapShatner'
+  const REPO_URL = 'https://api.github.com/users/FlapShatner/repos'
+
+  const getUser = async () => {
+    const res = await fetch(API_URL)
+    const data = await res.json()
+    if (data && data.message !== 'Not Found') {
+      // console.log(data)
+      return data
+    } else {
+      console.log('Could not get data')
+    }
+  }
+
+  const getRepos = async () => {
+    const res = await fetch(REPO_URL)
+    const data = await res.json()
+    if (data && data.message !== 'Not Found') {
+      // console.log(data)
+      return data
+    } else {
+      console.log('Could not get data')
+    }
+  }
+
+  const data = await getUser()
+  const repos = await getRepos()
+
+  return {
+    props: { data, repos },
+  }
 }

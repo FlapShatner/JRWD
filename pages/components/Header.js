@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image'
+import Socials from './Socials'
 
 export default function Header({ toggleDark, dark }) {
   const darkToggle = dark ? 'Light' : 'Dark'
@@ -26,7 +26,7 @@ export default function Header({ toggleDark, dark }) {
             <a href='#'>Projects</a>
           </li>
           <li>
-            <a href='#'>Contact me</a>
+            <Socials dark={dark} />
           </li>
         </nav>
       </header>
@@ -38,6 +38,7 @@ export default function Header({ toggleDark, dark }) {
         }
         nav {
           display: flex;
+          align-items: center;
           gap: 120px;
           margin-right: 3rem;
         }

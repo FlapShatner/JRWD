@@ -59,7 +59,7 @@ export default function Github({ dark, data, repos }) {
             display: flex;
           }
           .github {
-            filter: invert(0.8);
+            filter: ${dark && 'invert(0.8)'};
             width: 18px;
           }
 

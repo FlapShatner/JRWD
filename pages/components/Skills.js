@@ -132,6 +132,7 @@ export default function Skills({ dark }) {
           }
           .svg {
             filter: ${dark && 'invert(0.8)'};
+            z-index: -0;
           }
         `}
       </style>

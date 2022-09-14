@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Socials from './Socials'
 
 export default function Header({ toggleDark, dark }) {
   const darkToggle = dark ? 'Light' : 'Dark'
@@ -26,7 +25,7 @@ export default function Header({ toggleDark, dark }) {
             <a href='#'>Projects</a>
           </li>
           <li>
-            <Socials dark={dark} />
+            <a href='#'>Contact me</a>
           </li>
         </nav>
       </header>

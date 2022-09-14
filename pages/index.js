@@ -1,5 +1,6 @@
 import Header from './components/Header'
-import Github from './components/Github'
+
+import Socials from './components/Socials'
 import Skills from './components/Skills'
 import { useState } from 'react'
 
@@ -14,6 +15,7 @@ export default function Home({ data, repos }) {
       <div className='wrapper'>
         <div className='container'>
           <Header dark={dark} toggleDark={() => setDark(!dark)} />
+
           <div className='mobile'>
             <h1>Jordan Roberts</h1>
           </div>
@@ -38,8 +40,9 @@ export default function Home({ data, repos }) {
         </div>
 
         <Skills id='skills' dark={dark} />
+        <Socials dark={dark} data={data} repos={repos} />
 
-        <Github data={data} repos={repos} dark={dark} />
+        {/* <Github data={data} repos={repos} dark={dark} /> */}
       </div>
 
       <style jsx>

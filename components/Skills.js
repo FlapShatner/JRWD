@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import { front1, front2, back1, back2, dev1, dev2 } from '../../data/skills'
+import { front1, front2, back1, back2, dev1, dev2 } from '../data/skills'
 
 export default function Skills({ dark }) {
   const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-s)'

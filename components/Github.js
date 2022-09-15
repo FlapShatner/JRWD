@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 
-export default function Github({ dark, data, repos, close }) {
+export default function Github({ dark, data, repos, close, isOpen }) {
   const txtClr = !dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
   const txtClrSec = !dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
   const repoLength = repos.length
@@ -38,7 +38,7 @@ export default function Github({ dark, data, repos, close }) {
             background-color: ${!dark ? 'var(--clr-text-p)' : 'var(--clr-text-dp)'};
 
             border-radius: 55px;
-            display: flex;
+            display: ${isOpen ? 'flex' : 'none'};
             flex-direction: column;
             align-items: center;
             padding: 2rem 2rem;
@@ -50,6 +50,7 @@ export default function Github({ dark, data, repos, close }) {
             position: absolute;
             top: 15px;
             right: 20px;
+            cursor: pointer;
           }
 
           .close {

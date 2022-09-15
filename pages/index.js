@@ -1,7 +1,7 @@
-import Header from './components/Header'
-
-import Socials from './components/Socials'
-import Skills from './components/Skills'
+import Header from '../components/Header'
+import Projects from '../components/Projects'
+import Socials from '../components/Socials'
+import Skills from '../components/Skills'
 import { useState } from 'react'
 
 export default function Home({ data, repos }) {
@@ -40,6 +40,7 @@ export default function Home({ data, repos }) {
         </div>
 
         <Skills id='skills' dark={dark} />
+        <Projects dark={dark} />
         <Socials dark={dark} data={data} repos={repos} />
 
         {/* <Github data={data} repos={repos} dark={dark} /> */}
@@ -68,8 +69,7 @@ export default function Home({ data, repos }) {
           .col {
             padding: 10% 0 0 0;
           }
-          .image {
-          }
+
           .bio {
             width: 55%;
           }

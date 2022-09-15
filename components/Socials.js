@@ -5,6 +5,10 @@ import Github from './Github'
 export default function Socials({ dark, repos, data, close }) {
   const [isOpen, setIsOpen] = useState(false)
 
+  const onClose = () => {
+    setIsOpen((prev) => !prev)
+  }
+
   return (
     <>
       <div className='pill'>
@@ -14,12 +18,12 @@ export default function Socials({ dark, repos, data, close }) {
         <div className='wrap twitter'>
           <img src='/img/twitter.svg' alt='Twitter Link' />
         </div>
-        {isOpen ? (
-          <div onClick={() => setIsOpen(!isOpen)} className='wrap github'>
+        {!isOpen ? (
+          <div onClick={onClose} className='wrap github'>
             <img src='/img/github.svg' alt='Github Link' />
           </div>
         ) : (
-          <Github dark={dark} repos={repos} data={data} close={() => setIsOpen(!isOpen)} />
+          <Github dark={dark} repos={repos} data={data} isOpen={isOpen} close={onClose} />
         )}
       </div>
       <style jsx>
@@ -57,6 +61,9 @@ export default function Socials({ dark, repos, data, close }) {
           .twitter {
             position: absolute;
             top: 75px;
+          }
+          .github {
+            cursor: pointer;
           }
         `}
       </style>

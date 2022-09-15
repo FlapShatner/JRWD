@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Projects from '../components/Projects'
 import Socials from '../components/Socials'
 import Skills from '../components/Skills'
+import Footer from '../components/Footer'
 import { useState } from 'react'
 
 export default function Home({ data, repos }) {
@@ -42,8 +43,7 @@ export default function Home({ data, repos }) {
         <Skills id='skills' dark={dark} />
         <Projects dark={dark} />
         <Socials dark={dark} data={data} repos={repos} />
-
-        {/* <Github data={data} repos={repos} dark={dark} /> */}
+        <Footer dark={dark} />
       </div>
 
       <style jsx>

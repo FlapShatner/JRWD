@@ -20,6 +20,9 @@ export default function Projects({ dark }) {
           .container {
             border: 2px solid ${txtClr};
             border-radius: 55px;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
           }
           .wrapper {
             padding: 1rem;
@@ -110,11 +113,17 @@ export default function Projects({ dark }) {
               font-size: 1rem;
               margin-block: 0.5rem;
             }
+            a {
+              color: ${!dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
+              background-color: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
+              border: none;
+              border-radius: 15px;
+              padding: 0 10px;
+            }
             .links {
               display: flex;
-              justify-content: space-between;
+              justify-content: space-around;
               padding-top: 0.5rem;
-              margin-left: 45%;
             }
           `}
         </style>

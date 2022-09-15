@@ -25,7 +25,7 @@ export default function Projects({ dark }) {
             margin: 0 auto;
           }
           .wrapper {
-            padding: 1rem;
+            padding: 2rem;
             display: grid;
             grid: auto-flow / 1fr 1fr 1fr;
             gap: 1rem;

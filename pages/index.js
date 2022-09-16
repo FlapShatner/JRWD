@@ -55,14 +55,14 @@ export default function Home({ data, repos }) {
       <style jsx>
         {`
           .wrapper {
-            padding: 0 1rem;
+            padding: 0.5rem 1rem;
           }
           .container {
             min-height: 100vh;
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             width: 100%;
             max-width: 1600px;
-            margin: 10px auto;
+            margin: 0 auto;
             border: 2px solid ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-s)'};
             border-radius: 55px;
             transition: background-color 0.5s ease;
@@ -190,6 +190,16 @@ export default function Home({ data, repos }) {
             .main {
               flex-direction: column-reverse;
             }
+            h1 {
+              margin-top: 3rem;
+              font-size: 4.5rem;
+              line-height: 1.25;
+            }
+            h2 {
+              margin-top: 2rem;
+              font-size: 2rem;
+              line-height: 1.25;
+            }
             span {
               max-width: 300px;
               font-size: 100px;
@@ -200,9 +210,11 @@ export default function Home({ data, repos }) {
               max-width: 100%;
             }
             p {
+              line-height: 1.5;
               max-width: 90%;
-              margin: 1rem auto;
+              margin: 2rem auto;
               text-align: center;
+              font-size: 1.5rem;
             }
             .email {
               margin-bottom: 2rem;

@@ -11,7 +11,7 @@ export default function Footer({ dark }) {
         <div className='wrapper'>
           <h4>Jordan Roberts</h4>
           <a href='#'>jordan@jRobertsWeb.dev</a>
-          <p>©{year} Jordan Roberts </p>
+          <p>© {year} Jordan Roberts </p>
         </div>
       </div>
       <style jsx>
@@ -37,6 +37,7 @@ export default function Footer({ dark }) {
             color: transparent;
           }
           .wrapper {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -53,6 +54,24 @@ export default function Footer({ dark }) {
             font-family: var(--ff-poppins);
             font-size: 24px;
             font-weight: 500;
+          }
+          @media (max-width: 600px) {
+            .wrapper {
+              flex-direction: column;
+              margin-top: 1rem;
+              margin-right: 3rem;
+              gap: 1rem;
+              align-items: flex-end;
+            }
+            h4 {
+              display: none;
+            }
+            p {
+              font-size: 14px;
+            }
+            a {
+              font-size: 1.125rem;
+            }
           }
         `}
       </style>

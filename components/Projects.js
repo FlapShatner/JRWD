@@ -115,7 +115,7 @@ export default function Projects({ dark }) {
               font-family: var(--ff-poppins);
               font-weight: 500;
               color: ${txtClrSec};
-              font-size: 1rem;
+              font-size: 1.25rem;
               margin-block: 0.5rem;
             }
             a {

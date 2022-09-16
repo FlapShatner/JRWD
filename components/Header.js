@@ -145,6 +145,16 @@ export default function Header({ toggleDark, dark }) {
             font-size: 18px;
           }
         }
+        @media (max-width: 770px) {
+          nav {
+            gap: 3rem;
+          }
+          .toggle-wrapper {
+            position: absolute;
+            top: 110px;
+            right: 35px;
+          }
+        }
       `}</style>
     </>
   )

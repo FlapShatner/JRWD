@@ -7,6 +7,8 @@ import { useState } from 'react'
 
 export default function Home({ data, repos }) {
   const imageText = '</>'
+  const bio =
+    "I have always been fascinated by the Internet's nuts and bolts, so a few years ago I set about teaching myself everything I could about web development."
 
   const email = 'Jordan@jRobertsWeb.dev'
   const [dark, setDark] = useState(true)
@@ -19,17 +21,16 @@ export default function Home({ data, repos }) {
 
           <div className='mobile'>
             <h1>Jordan Roberts</h1>
+            <h2>Full stack web developer</h2>
           </div>
           <div className='main'>
             <div className='col bio'>
               <h1 className='desktop'>Jordan Roberts</h1>
-              <h2>Full stack web developer</h2>
+              <h2 className='desktop'>Full stack web developer</h2>
               <div className='text'>
-                <p>
-                  In 2021 I discovered my passion for code and thus began a journey to learn as much as I can about web
-                  development.
-                </p>
-                <p>I love honing my skills and making things for the Internet. </p>
+                <p>{bio}</p>
+                <p>Now I spend my time putting together the nuts and bolts and building things for the Internet</p>
+                <p> Solving problems and making cool stuff with code is my favorite thing.</p>
               </div>
 
               <p className='email'>{email}</p>
@@ -42,7 +43,7 @@ export default function Home({ data, repos }) {
 
         <Skills id='skills' dark={dark} />
         <Projects dark={dark} />
-        <Socials dark={dark} data={data} repos={repos} />
+        {/* <Socials dark={dark} data={data} repos={repos} /> */}
         <Footer dark={dark} />
       </div>
 
@@ -52,7 +53,7 @@ export default function Home({ data, repos }) {
             padding: 0 1rem;
           }
           .container {
-            height: 100vh;
+            min-height: 100vh;
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             width: 100%;
             max-width: 1600px;
@@ -108,6 +109,8 @@ export default function Home({ data, repos }) {
           }
           .image {
             display: flex;
+            padding: 0;
+            align-items: center;
           }
           span {
             font-family: var(--ff-rubik);
@@ -147,7 +150,7 @@ export default function Home({ data, repos }) {
               min-width: 300px;
               max-width: 500px;
             }
-            .col {
+            .bio {
               padding-top: 18%;
             }
           }
@@ -158,7 +161,11 @@ export default function Home({ data, repos }) {
             .mobile {
               display: flex;
               flex-direction: column;
-              padding: 7rem 7% 2rem;
+              padding: 4rem;
+              text-align: center;
+            }
+            .image {
+              align-items: flex-start;
             }
 
             .main {
@@ -172,6 +179,31 @@ export default function Home({ data, repos }) {
             }
             h2 {
               font-size: 28px;
+            }
+          }
+          @media (max-width: 770px) {
+            .main {
+              flex-direction: column-reverse;
+            }
+            span {
+              max-width: 300px;
+              font-size: 100px;
+              padding: 0;
+            }
+            .bio {
+              width: 100%;
+              max-width: 100%;
+            }
+            p {
+              max-width: 90%;
+              margin: 1rem auto;
+              text-align: center;
+            }
+            .email {
+              margin-bottom: 2rem;
+            }
+            .text {
+              margin-top: 1rem;
             }
           }
         `}

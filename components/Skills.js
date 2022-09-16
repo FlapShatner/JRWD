@@ -134,6 +134,11 @@ export default function Skills({ dark }) {
             filter: ${dark && 'invert(0.8)'};
             z-index: -0;
           }
+          @media (max-width: 1040px) {
+            .cards {
+              grid-template-columns: 1fr;
+            }
+          }
         `}
       </style>
     </>

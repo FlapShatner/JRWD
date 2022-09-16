@@ -45,6 +45,11 @@ export default function Projects({ dark }) {
               grid: auto-flow / 1fr 1fr;
             }
           }
+          @media (max-width: 735px) {
+            .wrapper {
+              grid: auto-flow/ 1fr;
+            }
+          }
         `}
       </style>
     </>

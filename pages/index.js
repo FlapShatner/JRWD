@@ -201,8 +201,8 @@ export default function Home({ data, repos }) {
               line-height: 1.25;
             }
             span {
-              max-width: 300px;
-              font-size: 100px;
+              max-width: 400px;
+              font-size: 250px;
               padding: 0;
             }
             .bio {

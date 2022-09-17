@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Projects from '../components/Projects'
-import Socials from '../components/Socials'
 import Skills from '../components/Skills'
 import Footer from '../components/Footer'
 import { useState } from 'react'
@@ -22,7 +21,7 @@ export default function Home({ data, repos }) {
           <meta name='viewport' content='width=500' />
         </Head>
         <div className='container'>
-          <Header dark={dark} toggleDark={() => setDark(!dark)} />
+          <Header dark={dark} data={data} repos={repos} toggleDark={() => setDark(!dark)} />
 
           <div className='mobile'>
             <h1>Jordan Roberts</h1>
@@ -48,7 +47,6 @@ export default function Home({ data, repos }) {
 
         <Skills id='skills' dark={dark} />
         <Projects dark={dark} />
-        {/* <Socials dark={dark} data={data} repos={repos} /> */}
         <Footer dark={dark} />
       </div>
 

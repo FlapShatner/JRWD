@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import Socials from './Socials'
 
-export default function Header({ toggleDark, dark }) {
+export default function Header({ data, repos, toggleDark, dark }) {
   const darkToggle = dark ? 'Light' : 'Dark'
 
   const logo = '{J}'
@@ -22,10 +23,7 @@ export default function Header({ toggleDark, dark }) {
             </label>
           </li>
           <li>
-            <a href='#'>Projects</a>
-          </li>
-          <li>
-            <a href='#'>Contact me</a>
+            <Socials data={data} repos={repos} dark={dark} />
           </li>
         </nav>
       </header>
@@ -38,8 +36,8 @@ export default function Header({ toggleDark, dark }) {
         nav {
           display: flex;
           align-items: center;
-          gap: 120px;
-          margin-right: 3rem;
+          gap: 250px;
+          margin-right: 5rem;
         }
         .logo {
           font-family: var(--ff-heebo);
@@ -63,8 +61,10 @@ export default function Header({ toggleDark, dark }) {
         }
 
         a:hover {
-          text-shadow: ${dark &&
-          '0 0 5px var(--shadow), 0 0 10px var(--shadow), 0 0 15px var(--shadow), 0 0 20px var(--shadow), 0 0 25px var(--shadow);'};
+          text-shadow: ${
+            dark &&
+            '0 0 5px var(--shadow), 0 0 10px var(--shadow), 0 0 15px var(--shadow), 0 0 20px var(--shadow), 0 0 25px var(--shadow);'
+          };
         }
         a::after {
           content: '';
@@ -95,7 +95,7 @@ export default function Header({ toggleDark, dark }) {
           width: 1px;
         }
         .toggle-wrapper {
-          width: 130px;
+          width: min-content;
           display: block;
         }
         .toggle {
@@ -148,14 +148,18 @@ export default function Header({ toggleDark, dark }) {
         @media (max-width: 770px) {
           nav {
             gap: 3rem;
+            width:100px;
           }
-          .toggle-wrapper {
-            position: absolute;
-            top: 110px;
-            right: 35px;
+          
+          
           }
         }
       `}</style>
     </>
   )
 }
+
+// .toggle-wrapper {
+//   position: absolute;
+//   top: 120px;
+//   right: 3rem;

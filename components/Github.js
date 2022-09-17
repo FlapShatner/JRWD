@@ -31,13 +31,14 @@ export default function Github({ dark, data, repos, close, isOpen }) {
       <style jsx>
         {`
           .card {
-            position: relative;
-            right: 93px;
-            top: 85px;
+            position: absolute;
+            top: -2px;
+            right: 110px;
             max-width: 300px;
             background-color: ${!dark ? 'var(--clr-text-p)' : 'var(--clr-text-dp)'};
 
             border-radius: 55px;
+            border-top-right-radius: 0;
             display: ${isOpen ? 'flex' : 'none'};
             flex-direction: column;
             align-items: center;
@@ -48,8 +49,8 @@ export default function Github({ dark, data, repos, close, isOpen }) {
           }
           .icon {
             position: absolute;
-            top: 15px;
-            right: 20px;
+            top: 8px;
+            right: 12px;
             cursor: pointer;
           }
 
@@ -87,6 +88,12 @@ export default function Github({ dark, data, repos, close, isOpen }) {
           a {
             color: ${txtClrSec};
             text-decoration: underline;
+          }
+          @media (max-width: 770px) {
+            .card {
+              top: 120px;
+              right: -2px;
+            }
           }
         `}
       </style>

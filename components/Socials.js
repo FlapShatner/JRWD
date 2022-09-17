@@ -12,58 +12,64 @@ export default function Socials({ dark, repos, data, close }) {
   return (
     <>
       <div className='pill'>
-        <div className='wrap email'>
-          <img src='/img/email.svg' alt='Email Link' />
+        <div onClick={onClose} className='wrap github'>
+          <img src='/img/github.svg' alt='Github Link' />
         </div>
+        {isOpen && <Github dark={dark} repos={repos} data={data} isOpen={isOpen} close={onClose} />}
         <div className='wrap twitter'>
           <img src='/img/twitter.svg' alt='Twitter Link' />
         </div>
-        {!isOpen ? (
-          <div onClick={onClose} className='wrap github'>
-            <img src='/img/github.svg' alt='Github Link' />
-          </div>
-        ) : (
-          <Github dark={dark} repos={repos} data={data} isOpen={isOpen} close={onClose} />
-        )}
+        <div className='wrap email'>
+          <img src='/img/email.svg' alt='Email Link' />
+        </div>
       </div>
       <style jsx>
         {`
           .pill {
-            position: fixed;
-            top: 140px;
-            right: 60px;
+            position: relative;
             display: flex;
-            flex-direction: column;
-            width: 58px;
+            flex-direction: row;
+            width: 170px;
             justify-content: space-between;
-            height: 200px;
+            height: 50px;
             background-color: ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'};
             border: 2px solid ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'};
             border-radius: 55px;
             align-items: center;
             padding: 4px 0;
-            transition: all 0.5s ease;
           }
           img {
             padding: 1px;
             width: 48px;
 
             filter: ${!dark && 'invert(.9)'};
-            transition: opacity 0.3s ease;
+            transition: transform 0.3s ease;
           }
           img:hover {
-            opacity: 100%;
-          }
-          .wrap {
-            border-radius: 50%;
-            transition: background-color 0.3s ease, filter 0.3s ease;
+            transform: scale(115%);
           }
           .twitter {
             position: absolute;
-            top: 75px;
+            right: 59px;
           }
-          .github {
-            cursor: pointer;
+          .github img {
+            visibility: ${isOpen ? 'hidden' : 'visible'};
+          }
+
+          @media (max-width: 770px) {
+            .pill {
+              position: absolute;
+              flex-direction: column-reverse;
+              width: 50px;
+              height: 170px;
+              padding: 0;
+              top: 38px;
+              right: 50px;
+            }
+            .twitter {
+              position: relative;
+              right: 0px;
+            }
           }
         `}
       </style>

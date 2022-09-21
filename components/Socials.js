@@ -1,9 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+import { useSpring, animated } from '@react-spring/web'
 import { useState } from 'react'
 import Github from './Github'
 
 export default function Socials({ dark, repos, data, close }) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const ghProps = useSpring({ to: { opacity: 0 }, from: { opacity: 1 }, reset: true, reverse: 'flip', delay: 200 })
 
   const onClose = () => {
     setIsOpen((prev) => !prev)
@@ -15,7 +18,7 @@ export default function Socials({ dark, repos, data, close }) {
         <div onClick={onClose} className='wrap github'>
           <img src='/img/github.svg' alt='Github Link' />
         </div>
-        {isOpen && <Github dark={dark} repos={repos} data={data} isOpen={isOpen} close={onClose} />}
+        <Github dark={dark} repos={repos} data={data} isOpen={isOpen} close={onClose} />
         <div className='wrap twitter'>
           <img src='/img/twitter.svg' alt='Twitter Link' />
         </div>
@@ -23,6 +26,7 @@ export default function Socials({ dark, repos, data, close }) {
           <img src='/img/email.svg' alt='Email Link' />
         </div>
       </div>
+
       <style jsx>
         {`
           .pill {

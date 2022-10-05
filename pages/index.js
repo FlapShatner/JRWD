@@ -5,9 +5,10 @@ import Skills from '../components/Skills'
 import Footer from '../components/Footer'
 import { ModalWrap } from '../components/ModalWrap'
 import { Contact } from '../components/Contact'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 export default function Home() {
+  const projectsRef = useRef(null)
   const imageText = '</>'
   const bio =
     "I have always been fascinated by the Internet's nuts and bolts, so a few years ago I set about teaching myself everything I could about web development."
@@ -15,6 +16,10 @@ export default function Home() {
   const email = 'Jordan@jRobertsWeb.dev'
   const [dark, setDark] = useState(true)
   const [contact, setContact] = useState(false)
+
+  const scrollTo = () => {
+    projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <>
@@ -24,7 +29,12 @@ export default function Home() {
           <meta name='viewport' content='width=500' />
         </Head>
         <div className='container'>
-          <Header dark={dark} contactOpen={() => setContact(!contact)} toggleDark={() => setDark(!dark)} />
+          <Header
+            dark={dark}
+            contactOpen={() => setContact(!contact)}
+            toggleDark={() => setDark(!dark)}
+            scrollTo={scrollTo}
+          />
           <div>
             <ModalWrap dark={dark} show={contact} />
           </div>
@@ -51,7 +61,7 @@ export default function Home() {
         </div>
 
         <Skills id='skills' dark={dark} />
-        <div id='projects' />
+        <div id='projects' ref={projectsRef} />
         <Projects dark={dark} />
         <Footer dark={dark} />
       </div>

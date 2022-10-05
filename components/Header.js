@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-export default function Header({ toggleDark, dark, contactOpen }) {
+export default function Header({ toggleDark, dark, contactOpen, scrollTo }) {
   const darkToggle = dark ? 'Light' : 'Dark'
 
   const logo = '{J}'
@@ -23,10 +23,8 @@ export default function Header({ toggleDark, dark, contactOpen }) {
               </div>
             </label>
           </li>
-          <li>
-            <Link href='#projects'>
-              <a>Projects</a>
-            </Link>
+          <li onClick={scrollTo}>
+            <a>Projects</a>
           </li>
           <li onClick={contactOpen}>
             <a>Contact Me</a>

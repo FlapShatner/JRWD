@@ -3,15 +3,18 @@ import Header from '../components/Header'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import Footer from '../components/Footer'
+import { ModalWrap } from '../components/ModalWrap'
+import { Contact } from '../components/Contact'
 import { useState } from 'react'
 
-export default function Home({ data, repos }) {
+export default function Home() {
   const imageText = '</>'
   const bio =
     "I have always been fascinated by the Internet's nuts and bolts, so a few years ago I set about teaching myself everything I could about web development."
 
   const email = 'Jordan@jRobertsWeb.dev'
   const [dark, setDark] = useState(true)
+  const [contact, setContact] = useState(false)
 
   return (
     <>
@@ -21,8 +24,10 @@ export default function Home({ data, repos }) {
           <meta name='viewport' content='width=500' />
         </Head>
         <div className='container'>
-          <Header dark={dark} data={data} repos={repos} toggleDark={() => setDark(!dark)} />
-
+          <Header dark={dark} contactOpen={() => setContact(!contact)} toggleDark={() => setDark(!dark)} />
+          <div>
+            <ModalWrap dark={dark} show={contact} />
+          </div>
           <div className='mobile'>
             <h1>Jordan Roberts</h1>
             <h2>Full stack web developer</h2>
@@ -46,6 +51,7 @@ export default function Home({ data, repos }) {
         </div>
 
         <Skills id='skills' dark={dark} />
+        <div id='projects' />
         <Projects dark={dark} />
         <Footer dark={dark} />
       </div>
@@ -235,36 +241,36 @@ export default function Home({ data, repos }) {
   )
 }
 
-export async function getStaticProps(ctx) {
-  const API_URL = 'https://api.github.com/users/FlapShatner'
-  const REPO_URL = 'https://api.github.com/users/FlapShatner/repos'
+// export async function getStaticProps(ctx) {
+//   const API_URL = 'https://api.github.com/users/FlapShatner'
+//   const REPO_URL = 'https://api.github.com/users/FlapShatner/repos'
 
-  const getUser = async () => {
-    const res = await fetch(API_URL)
-    const data = await res.json()
-    if (data && data.message !== 'Not Found') {
-      // console.log(data)
-      return data
-    } else {
-      console.log('Could not get data')
-    }
-  }
+//   const getUser = async () => {
+//     const res = await fetch(API_URL)
+//     const data = await res.json()
+//     if (data && data.message !== 'Not Found') {
+//       // console.log(data)
+//       return data
+//     } else {
+//       console.log('Could not get data')
+//     }
+//   }
 
-  const getRepos = async () => {
-    const res = await fetch(REPO_URL)
-    const data = await res.json()
-    if (data && data.message !== 'Not Found') {
-      // console.log(data)
-      return data
-    } else {
-      console.log('Could not get data')
-    }
-  }
+//   const getRepos = async () => {
+//     const res = await fetch(REPO_URL)
+//     const data = await res.json()
+//     if (data && data.message !== 'Not Found') {
+//       // console.log(data)
+//       return data
+//     } else {
+//       console.log('Could not get data')
+//     }
+//   }
 
-  const data = await getUser()
-  const repos = await getRepos()
+//   const data = await getUser()
+//   const repos = await getRepos()
 
-  return {
-    props: { data, repos },
-  }
-}
+//   return {
+//     props: { data, repos },
+//   }
+// }

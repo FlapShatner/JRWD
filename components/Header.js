@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import Socials from './Socials'
 
-export default function Header({ data, repos, toggleDark, dark }) {
+import Link from 'next/link'
+
+export default function Header({ toggleDark, dark, contactOpen }) {
   const darkToggle = dark ? 'Light' : 'Dark'
 
   const logo = '{J}'
@@ -23,7 +24,12 @@ export default function Header({ data, repos, toggleDark, dark }) {
             </label>
           </li>
           <li>
-            <Socials data={data} repos={repos} dark={dark} />
+            <Link href='#projects'>
+              <a>Projects</a>
+            </Link>
+          </li>
+          <li onClick={contactOpen}>
+            <a>Contact Me</a>
           </li>
         </nav>
       </header>
@@ -36,7 +42,7 @@ export default function Header({ data, repos, toggleDark, dark }) {
         nav {
           display: flex;
           align-items: center;
-          gap: 250px;
+          gap: 50px;
           margin-right: 5rem;
         }
         .logo {
@@ -52,6 +58,7 @@ export default function Header({ data, repos, toggleDark, dark }) {
         }
 
         a {
+          cursor:pointer;
           position: relative;
           font-family: var(--ff-poppins);
           font-size: 24px;
@@ -147,8 +154,12 @@ export default function Header({ data, repos, toggleDark, dark }) {
         }
         @media (max-width: 770px) {
           nav {
-            gap: 3rem;
-            width:100px;
+            gap: 2rem;
+            width:100%;
+            margin-right:1rem;
+          }
+          a{
+            font-size: 16px;
           }
           
           

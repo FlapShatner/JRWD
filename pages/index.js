@@ -69,7 +69,7 @@ export default function Home() {
       <style jsx>
         {`
           .wrapper {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.25rem 0.5rem 1rem;
           }
           .container {
             min-height: 100vh;
@@ -244,6 +244,18 @@ export default function Home() {
           body {
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             transition: background-color var(--transition);
+          }
+          body::-webkit-scrollbar-track {
+            background-color: transparent;
+          }
+
+          body::-webkit-scrollbar-thumb {
+            background-color: ${dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
+
+            border-radius: 5px;
+          }
+          body::-webkit-scrollbar {
+            width: 0.75rem;
           }
         `}
       </style>

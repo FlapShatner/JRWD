@@ -1,7 +1,4 @@
-import { useState } from 'react'
-import { useSpring, animated } from '@react-spring/web'
 import { projects } from '../data/projects'
-import useMeasure from '../hooks/useMeasure'
 
 export default function Projects({ dark }) {
   const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
@@ -59,32 +56,21 @@ export default function Projects({ dark }) {
   )
 
   function Card({ p }) {
-    const Acc = animated.div
-    const [on, toggle] = useState(false)
-    const [bind, { height, top }] = useMeasure()
-
-    const styles = useSpring({
-      overflow: 'hidden',
-      height: on ? height + top * 2 : 0,
-    })
-
     return (
       <>
-        <div onMouseEnter={() => toggle(true)} onMouseLeave={() => toggle(false)} className='card'>
+        <div className='card'>
           <div className='desc-wrapper'>
             <div className='desc'>
               <h4>{p.title}</h4>
-              <animated.div style={styles}>
-                <Acc {...bind} className='accordion'>
-                  <p className='outline'>{p.desc}</p>
-                </Acc>
-              </animated.div>
+
+              <p className='outline'>{p.desc}</p>
+
               <div className='links'>
                 <a href={p.srcUrl} className='code'>
                   Source code
                 </a>
                 <a href={p.liveUrl} className='link'>
-                  View live
+                  View on the web
                 </a>
               </div>
             </div>
@@ -103,11 +89,6 @@ export default function Projects({ dark }) {
               display: flex;
               align-items: flex-end;
               isolation: isolate;
-            }
-
-            .accordion {
-              padding: 0.25rem;
-              overflow: hidden;
             }
 
             .desc {

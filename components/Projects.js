@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import { useSpring, animated } from '@react-spring/web'
 import { projects } from '../data/projects'
-import useMeasure from '../hooks/useMeasure'
+import DetailsModal from './DetailsModal'
+import { useState } from 'react'
 
 export default function Projects({ dark }) {
   const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
@@ -28,10 +27,10 @@ export default function Projects({ dark }) {
             margin: 0 auto;
           }
           .wrapper {
-            padding: 2rem;
+            padding: 3rem;
             display: grid;
             grid: auto-flow / 1fr 1fr 1fr;
-            gap: 1rem;
+            gap: 2rem;
             margin: 0 auto;
             justify-items: center;
           }
@@ -59,41 +58,31 @@ export default function Projects({ dark }) {
   )
 
   function Card({ p }) {
-    const Acc = animated.div
-    const [on, toggle] = useState(false)
-    const [bind, { height, top }] = useMeasure()
+    const [show, setShow] = useState(false)
 
-    const styles = useSpring({
-      overflow: 'hidden',
-      height: on ? height + top * 2 : 0,
-    })
+    const handleClose = () => {
+      setShow(false)
+      console.log('clicked')
+    }
 
     return (
       <>
-        <div onMouseEnter={() => toggle(true)} onMouseLeave={() => toggle(false)} className='card'>
+        <div onClick={() => setShow(true)} className='card'>
           <div className='desc-wrapper'>
             <div className='desc'>
               <h4>{p.title}</h4>
-              <animated.div style={styles}>
-                <Acc {...bind} className='accordion'>
-                  <p className='outline'>{p.desc}</p>
-                </Acc>
-              </animated.div>
               <div className='links'>
-                <a href={p.srcUrl} className='code'>
-                  Source code
-                </a>
-                <a href={p.liveUrl} className='link'>
-                  View live
-                </a>
+                <a className='code'>Details</a>
               </div>
             </div>
           </div>
         </div>
+        <DetailsModal show={show} close={handleClose} p={p} />
         <style jsx>
           {`
             .card {
               max-width: 600px;
+              width: 100%;
               min-width: 300px;
               aspect-ratio: 1/1;
               background-image: url('/img/scrshts/${p.imgUrl}');
@@ -104,19 +93,17 @@ export default function Projects({ dark }) {
               align-items: flex-end;
               isolation: isolate;
             }
-
-            .accordion {
-              padding: 0.25rem;
-              overflow: hidden;
+            .desc-wrapper {
+              width: 100%;
             }
 
             .desc {
-              padding: 0.5rem 1rem;
+              padding: 1rem;
               position: relative;
               border-bottom-left-radius: 35px;
               border-bottom-right-radius: 35px;
             }
-            .desc::after {
+            .desc::before {
               content: '';
               position: absolute;
               inset: 0;
@@ -130,6 +117,7 @@ export default function Projects({ dark }) {
               font-family: var(--ff-poppins);
               color: ${txtClr};
               font-size: 1.5rem;
+              text-align: center;
             }
             p,
             a {
@@ -144,11 +132,11 @@ export default function Projects({ dark }) {
               background-color: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
               border: none;
               border-radius: 15px;
-              padding: 0 10px;
+              padding: 0 40px;
             }
             .links {
               display: flex;
-              justify-content: space-around;
+              justify-content: center;
               padding-top: 0.5rem;
             }
           `}

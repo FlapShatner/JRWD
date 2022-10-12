@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,33 +18,41 @@ function DetailsModal({ p, show, close, dark }) {
     close()
   }
 
-  const content = show ? (
+  const content = (
     <>
       <div className='overlay'>
-        <div className='container'>
-          <div className='col col-left'>
-            <button className='back' onClick={handleClick}>
-              Back
-            </button>
-            <div className='desc'>
-              <h2>{p.title}</h2>
-              <p>{p.desc}</p>
-              <div className='links'>
-                <Link href={p.liveUrl}>
-                  <a className='link'>Visit on the web</a>
-                </Link>
-                <Link href={p.srcUrl}>
-                  <a className='link'>View source code</a>
-                </Link>
+        <div className='wrapper'>
+          <div className='container'>
+            <div className='col col-left'>
+              <button className='back' onClick={handleClick}>
+                Back
+              </button>
+              <div className='desc'>
+                <h2>{p.title}</h2>
+                <p>{p.desc}</p>
+                <div className='links'>
+                  <Link href={p.liveUrl}>
+                    <a target='_blank' className='link'>
+                      Visit on the web
+                    </a>
+                  </Link>
+                  <Link href={p.srcUrl}>
+                    <a target='_blank' className='link'>
+                      View source code
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='col col-right'>
-            <Link href={p.liveUrl}>
-              <div className='screen'>
-                <Image src={`/img/scrshts/${p.imgUrl}`} layout='responsive' width={900} height={800} />
-              </div>
-            </Link>
+            <div className='col col-right'>
+              <Link href={p.liveUrl}>
+                <a target='_blank'>
+                  <div className='screen'>
+                    <Image src={`/img/scrshts/${p.imgUrl}`} layout='responsive' width={900} height={800} />
+                  </div>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -61,11 +69,16 @@ function DetailsModal({ p, show, close, dark }) {
             align-items: center;
             background-color: rgba(0, 0, 0, 0.8);
           }
-          .container {
-            display: flex;
+          .wrapper {
+            position: relative;
             width: 80%;
             max-width: 900px;
             height: 80vh;
+          }
+          .container {
+            display: flex;
+            height: 100%;
+            width: 100%;
             border-radius: 55px;
             border: 2px solid ${txtClr};
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
@@ -171,7 +184,7 @@ function DetailsModal({ p, show, close, dark }) {
         `}
       </style>
     </>
-  ) : null
+  )
 
   if (isBrowser) {
     return ReactDOM.createPortal(content, document.getElementById('modal-root'))

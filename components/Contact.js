@@ -3,13 +3,13 @@ import { Twitter } from './Twitter'
 import { Github } from './Github'
 import { animated } from '@react-spring/web'
 
-export const Contact = ({ dark, styles }) => {
+export const Contact = ({ dark, styles, close }) => {
   const Container = animated.div
 
   return (
     <>
       <Container style={styles} className='container'>
-        <Email dark={dark} />
+        <Email close={close} dark={dark} />
         <Twitter dark={dark} />
         <Github dark={dark} />
       </Container>

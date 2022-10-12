@@ -78,7 +78,7 @@ export default function Projects({ dark }) {
             </div>
           </div>
         </div>
-        <DetailsModal show={show} close={handleClose} p={p} dark={dark} />
+        {show && <DetailsModal show={show} close={handleClose} p={p} dark={dark} />}
         <style jsx>
           {`
             .card {
@@ -104,6 +104,7 @@ export default function Projects({ dark }) {
               position: relative;
               border-bottom-left-radius: 35px;
               border-bottom-right-radius: 35px;
+              border-top: 2px solid var(--clr-bg-d);
             }
             .desc::before {
               content: '';

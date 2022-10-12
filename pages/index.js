@@ -36,7 +36,7 @@ export default function Home() {
             scrollTo={scrollTo}
           />
           <div>
-            <ModalWrap dark={dark} show={contact} />
+            <ModalWrap dark={dark} show={contact} close={() => setContact(!contact)} />
           </div>
           <div className='mobile'>
             <h1>Jordan Roberts</h1>

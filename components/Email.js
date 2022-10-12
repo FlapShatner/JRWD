@@ -1,7 +1,7 @@
 import { useClipboard } from 'use-clipboard-copy'
 import { useState } from 'react'
 
-export const Email = ({ dark }) => {
+export const Email = ({ dark, close }) => {
   const txtClrInv = !dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
   const txtClrSec = dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
 
@@ -79,6 +79,7 @@ export const Email = ({ dark }) => {
   return (
     <>
       <div className='email'>
+        <img onClick={() => close()} src='/img/close.svg' />
         <h2 className='cta'>Email me:</h2>
         <h2 onClick={handleCopy}>Jordan@jrobertsweb.dev</h2>
 

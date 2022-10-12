@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-
+import Image from 'next/image'
 import Link from 'next/link'
 
 function DetailsModal({ p, show, close, dark }) {
@@ -20,26 +20,31 @@ function DetailsModal({ p, show, close, dark }) {
 
   const content = show ? (
     <>
-      <div onClick={handleClick} className='overlay'>
+      <div className='overlay'>
         <div className='container'>
-          <div className='btn-wrap'>
+          <div className='col col-left'>
             <button className='back' onClick={handleClick}>
               Back
             </button>
-          </div>
-          <div className='desc'>
-            <h2>{p.title}</h2>
-            <div className='cols'>
+            <div className='desc'>
+              <h2>{p.title}</h2>
               <p>{p.desc}</p>
               <div className='links'>
                 <Link href={p.liveUrl}>
-                  <button className='link'>Visit on the web</button>
+                  <a className='link'>Visit on the web</a>
                 </Link>
                 <Link href={p.srcUrl}>
-                  <button className='link'>View source code</button>
+                  <a className='link'>View source code</a>
                 </Link>
               </div>
             </div>
+          </div>
+          <div className='col col-right'>
+            <Link href={p.liveUrl}>
+              <div className='screen'>
+                <Image src={`/img/scrshts/${p.imgUrl}`} layout='responsive' width={900} height={800} />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -58,73 +63,110 @@ function DetailsModal({ p, show, close, dark }) {
           }
           .container {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             width: 80%;
             max-width: 900px;
             height: 80vh;
             border-radius: 55px;
+            border: 2px solid ${txtClr};
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
-            background-image: url('/img/scrshts/${p.imgUrl}');
-            background-position: center 60px;
-            background-size: cover;
             color: ${txtClr};
             isolation: isolate;
           }
           .desc {
             position: relative;
             height: max-content;
-            padding: 3rem 5rem;
+            padding: 3rem;
           }
-          .desc::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
-            opacity: 0.9;
-            z-index: -1;
-            border-bottom-left-radius: 35px;
-            border-bottom-right-radius: 35px;
-          }
-          .btn-wrap {
-            background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-          }
+
           button {
             background-color: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             color: ${!dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
-            padding: 0 2rem;
+            padding: 0.25rem 4rem;
             font-family: var(--ff-poppins);
             font-weight: 500;
-            margin: 1rem 3rem;
+            margin: 2.25rem;
             border-radius: 20px;
           }
           h2 {
             font-family: var(--ff-poppins);
             color: ${txtClr};
-            font-size: 1.5rem;
-            text-align: center;
+            font-size: 1.75rem;
           }
+          a,
           p {
             font-family: var(--ff-poppins);
             font-weight: 500;
             color: ${txtClrSec};
-            font-size: 1.25rem;
-            margin-block: 0.5rem;
-            max-width: 60%;
-            line-height: 2;
+            font-size: 1.125rem;
+            margin-block: 2rem;
+            line-height: 1.65;
           }
-          .cols {
+
+          .col {
+            width: 50%;
+            position: relative;
+          }
+          .links {
             display: flex;
-            padding: 2rem 0;
-          }
-          .back {
-            align-self: end;
+            flex-direction: column;
           }
           .link {
-            min-width: 250px;
-            height: 3rem;
+            margin: 1rem;
+            text-decoration: underline;
+            font-size: 1.35rem;
+            width: max-content;
+          }
+          .col-right {
+            padding: 8rem 3rem 0 0;
+          }
+          .screen {
+            position: relative;
+          }
+          .screen::after {
+            content: 'Visit';
+            font-family: var(--ff-mont);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 68px;
+            position: absolute;
+            inset: 0;
+            background-color: var(--clr-bg-d);
+            opacity: 0;
+
+            transition: all 0.4s ease;
+          }
+          .screen:hover::after {
+            opacity: 0.8;
+          }
+          @media (max-width: 955px) {
+            .container {
+              flex-direction: column;
+              height: fit-content;
+              position: absolute;
+              top: 40px;
+            }
+            .col {
+              width: 100%;
+            }
+            .col-left {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            }
+            .col-right {
+              padding: 2rem;
+            }
+            button {
+              margin: 1rem 2rem;
+            }
+            .links {
+              align-items: center;
+            }
+            .desc {
+              padding-bottom: 1rem;
+            }
           }
         `}
       </style>

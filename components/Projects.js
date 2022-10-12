@@ -77,7 +77,7 @@ export default function Projects({ dark }) {
             </div>
           </div>
         </div>
-        <DetailsModal show={show} close={handleClose} p={p} />
+        <DetailsModal show={show} close={handleClose} p={p} dark={dark} />
         <style jsx>
           {`
             .card {

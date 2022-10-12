@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom'
 import Link from 'next/link'
 
 function DetailsModal({ p, show, close, dark }) {
-  const txtClr = !dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
-  const txtClrSec = !dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
+  const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
+  const txtClrSec = dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
 
   const [isBrowser, setIsBrowser] = useState(false)
 
@@ -20,7 +20,7 @@ function DetailsModal({ p, show, close, dark }) {
 
   const content = show ? (
     <>
-      <div className='overlay'>
+      <div onClick={handleClick} className='overlay'>
         <div className='container'>
           <div className='btn-wrap'>
             <button className='back' onClick={handleClick}>
@@ -64,7 +64,7 @@ function DetailsModal({ p, show, close, dark }) {
             max-width: 900px;
             height: 80vh;
             border-radius: 55px;
-            background-color: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
+            background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             background-image: url('/img/scrshts/${p.imgUrl}');
             background-position: center 60px;
             background-size: cover;
@@ -80,20 +80,20 @@ function DetailsModal({ p, show, close, dark }) {
             content: '';
             position: absolute;
             inset: 0;
-            background: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
+            background: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             opacity: 0.9;
             z-index: -1;
             border-bottom-left-radius: 35px;
             border-bottom-right-radius: 35px;
           }
           .btn-wrap {
-            background-color: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
+            background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             border-top-left-radius: 50px;
             border-top-right-radius: 50px;
           }
           button {
-            background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
-            color: ${dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
+            background-color: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
+            color: ${!dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
             padding: 0 2rem;
             font-family: var(--ff-poppins);
             font-weight: 500;

@@ -32,6 +32,8 @@ export default function Home() {
           <meta property='og:image' content='https://i.postimg.cc/sg3bvzSs/port-title.png' />
           <meta property='og:url' content='https://www.jrobertsweb.dev/' />
           <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:image' content='https://i.postimg.cc/sg3bvzSs/port-title.png' />
+          <meta name='twitter:creator' content='@jRobertsWebDev' />
           <meta name='viewport' content='width=500' />
         </Head>
         <div className='container'>

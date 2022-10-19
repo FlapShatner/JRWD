@@ -29,10 +29,10 @@ export default function Home() {
           <meta property='og:title' content='Jordan Roberts' />
           <meta property='og:type' content='website' />
           <meta property='og:description' content='Jordan Roberts, web developer' />
-          <meta property='og:image' content='https://i.postimg.cc/hv9jSmQS/port-title.png' />
+          <meta property='og:image' content='https://i.postimg.cc/25VnCHkr/port-title-fixed.png' />
           <meta property='og:url' content='https://www.jrobertsweb.dev/' />
           <meta name='twitter:card' content='summary_large_image' />
-          <meta name='twitter:image' content='https://i.postimg.cc/hv9jSmQS/port-title.png' />
+          <meta name='twitter:image' content='https://i.postimg.cc/25VnCHkr/port-title-fixed.png' />
           <meta name='twitter:creator' content='@jRobertsWebDev' />
           <meta name='viewport' content='width=500' />
         </Head>

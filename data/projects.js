@@ -8,6 +8,14 @@ export const projects = [
     liveUrl: 'https://planets-jrwd.vercel.app',
   },
   {
+    name: 'Password Generator',
+    title: 'Password Generator',
+    desc: 'An app to generate random strong passwords',
+    imgUrl: 'pw.png',
+    srcUrl: 'https://github.com/FlapShatner/pw-validator',
+    liveUrl: 'https://pw-gen-flapshatner.vercel.app/',
+  },
+  {
     name: 'Design',
     title: 'Design Portfolio',
     desc: 'A portfolio for a fictional designer. Built with HTML and CSS. I made this as a practice project',

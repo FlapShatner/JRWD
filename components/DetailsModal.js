@@ -99,6 +99,7 @@ function DetailsModal({ p, show, close, dark }) {
             font-weight: 500;
             margin: 2.25rem;
             border-radius: 20px;
+            cursor: pointer;
           }
           h2 {
             font-family: var(--ff-poppins);

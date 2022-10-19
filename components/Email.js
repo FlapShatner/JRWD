@@ -179,6 +179,9 @@ export const Email = ({ dark, close }) => {
         .suc {
           color: green;
         }
+        img {
+          cursor: pointer;
+        }
       `}</style>
     </>
   )

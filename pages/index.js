@@ -72,7 +72,7 @@ export default function Home() {
             padding: 0.5rem 0.25rem 0.5rem 1rem;
           }
           .container {
-            min-height: 100vh;
+            min-height: calc(100vh - 15px);
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             width: 100%;
             max-width: 1600px;

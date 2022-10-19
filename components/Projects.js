@@ -93,6 +93,7 @@ export default function Projects({ dark }) {
               display: flex;
               align-items: flex-end;
               isolation: isolate;
+              cursor: pointer;
             }
 
             .desc-wrapper {

@@ -26,6 +26,12 @@ export default function Home() {
       <div className='wrapper'>
         <Head>
           <title>Jordan Roberts</title>
+          <meta property='og:title' content='Jordan Roberts' />
+          <meta property='og:type' content='website' />
+          <meta property='og:description' content='Jordan Roberts, web developer' />
+          <meta property='og:image' content='https://i.postimg.cc/sg3bvzSs/port-title.png' />
+          <meta property='og:url' content='https://www.jrobertsweb.dev/' />
+          <meta name='twitter:card' content='summary_large_image' />
           <meta name='viewport' content='width=500' />
         </Head>
         <div className='container'>

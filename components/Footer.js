@@ -7,7 +7,9 @@ export default function Footer({ dark }) {
   return (
     <>
       <div className='container'>
-        <div className='logo'>{logo}</div>
+        <div className='logo new-logo'>
+          <img src='/img/jr-logo.svg' alt='' />
+        </div>
         <div className='wrapper'>
           <h4>Jordan Roberts</h4>
           <a href='#'>jordan@jRobertsWeb.dev</a>
@@ -35,6 +37,9 @@ export default function Footer({ dark }) {
             background-size: cover;
             background-clip: text;
             color: transparent;
+          }
+          .new-logo {
+            width: 52px;
           }
           .wrapper {
             position: relative;

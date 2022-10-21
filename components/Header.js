@@ -9,7 +9,9 @@ export default function Header({ toggleDark, dark, contactOpen, scrollTo }) {
   return (
     <>
       <header>
-        <div className='logo'>{logo}</div>
+        <div className='logo new-logo'>
+          <img src='/img/jr-logo.svg' alt='' />
+        </div>
         <nav>
           <li>
             <label className='toggle-wrapper' htmlFor='toggle'>
@@ -53,6 +55,9 @@ export default function Header({ toggleDark, dark, contactOpen, scrollTo }) {
           background-size: 100%;
           background-clip: text;
           color: transparent;
+        }
+        .new-logo{
+          width:52px;
         }
 
         a {

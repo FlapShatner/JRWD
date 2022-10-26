@@ -10,8 +10,7 @@ import { useState, useRef } from 'react'
 export default function Home() {
   const projectsRef = useRef(null)
   const imageText = '</>'
-  const bio =
-    "I have always been fascinated by the Internet's nuts and bolts, so a few years ago I set about teaching myself everything I could about web development."
+  const bio = 'I am a self-taught web developer who is obsessed with learning and honing my skills.'
 
   const email = 'Jordan@jRobertsWeb.dev'
   const [dark, setDark] = useState(true)
@@ -58,8 +57,8 @@ export default function Home() {
               <h2 className='desktop'>Full stack web developer</h2>
               <div className='text'>
                 <p>{bio}</p>
-                <p>Now I spend my time putting together the nuts and bolts and building things for the Internet</p>
-                <p> Solving problems and making cool stuff with code is my favorite thing.</p>
+                <p>I spend most of my time building things for the Internet</p>
+                <p>I love solving problems and making cool stuff with code.</p>
               </div>
 
               <p className='email'>{email}</p>

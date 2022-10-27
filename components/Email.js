@@ -4,6 +4,7 @@ import { useState } from 'react'
 export const Email = ({ dark, close }) => {
   const txtClrInv = !dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
   const txtClrSec = dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
+  const txtClrSecInv = !dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
 
   //   Clipboard API
   const clipboard = useClipboard({
@@ -84,7 +85,7 @@ export const Email = ({ dark, close }) => {
         <h2 onClick={handleCopy}>Jordan@jrobertsweb.dev</h2>
 
         <button onClick={handleCopy} className='copy'>
-          {clipboard.copied ? 'Copied' : 'Copy'}
+          {clipboard.copied ? 'Copied' : <img className='copy-icon' src='/img/copy.svg' />}
         </button>
         <form onSubmit={handleSubmit}>
           <label htmlFor='message'>Or send me a message:</label>
@@ -147,7 +148,11 @@ export const Email = ({ dark, close }) => {
           font-size: 14px;
         }
         .copy {
-          width: 90px;
+          width: max-content;
+          padding: 0 5px;
+          background-color: transparent;
+          border: none;
+          color: ${txtClrSecInv};
         }
         form {
           display: flex;
@@ -181,6 +186,12 @@ export const Email = ({ dark, close }) => {
         }
         img {
           cursor: pointer;
+          filter: ${!dark && 'invert(0.8)'};
+        }
+        .copy-icon {
+          width: 24px;
+          height: 24px;
+          opacity: 0.6;
         }
       `}</style>
     </>

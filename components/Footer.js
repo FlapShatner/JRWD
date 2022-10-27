@@ -1,8 +1,20 @@
+import { useClipboard } from 'use-clipboard-copy'
+
 export default function Footer({ dark }) {
   const logo = '{J}'
   const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
   const txtClrSec = dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
   const year = new Date().getFullYear()
+
+  //   Clipboard API
+  const clipboard = useClipboard({
+    copiedTimeout: 800, // timeout duration in milliseconds
+  })
+
+  const handleCopy = () => {
+    const address = 'jordan@jrobertsweb.dev'
+    clipboard.copy(address)
+  }
 
   return (
     <>
@@ -12,7 +24,7 @@ export default function Footer({ dark }) {
         </div>
         <div className='wrapper'>
           <h4>Jordan Roberts</h4>
-          <a href='#'>jordan@jRobertsWeb.dev</a>
+          <a onClick={handleCopy}>{clipboard.copied ? 'copied' : 'jordan@jRobertsWeb.dev'}</a>
           <p>© {year} Jordan Roberts </p>
         </div>
       </div>
@@ -53,6 +65,9 @@ export default function Footer({ dark }) {
           p {
             font-family: var(--ff-mont);
             color: ${txtClrSec};
+          }
+          a {
+            cursor: pointer;
           }
           h4 {
             color: ${txtClrSec};

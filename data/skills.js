@@ -22,6 +22,10 @@ export const front1 = [
 ]
 export const front2 = [
   {
+    title: 'TypeScript',
+    img: '/img/typescript.svg',
+  },
+  {
     title: 'Redux',
     img: '/img/redux.svg',
   },

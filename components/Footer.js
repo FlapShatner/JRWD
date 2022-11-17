@@ -20,7 +20,7 @@ export default function Footer({ dark }) {
     <>
       <div className='container'>
         <div className='logo new-logo'>
-          <img src='/img/jr-logo.svg' alt='' />
+          <img src='/img/jr-logo.svg' alt='JR Logo' />
         </div>
         <div className='wrapper'>
           <h4>Jordan Roberts</h4>

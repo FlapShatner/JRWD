@@ -38,13 +38,8 @@ export default function Home() {
           <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
         </Head>
         <div className='container'>
-          <Header
-            dark={dark}
-            contactOpen={() => setContact(!contact)}
-            toggleDark={() => setDark(!dark)}
-            scrollTo={scrollTo}
-          />
-          <div>
+          <Header dark={dark} contactOpen={() => setContact(!contact)} toggleDark={() => setDark(!dark)} scrollTo={scrollTo} />
+          <div className='boundary'>
             <ModalWrap dark={dark} show={contact} close={() => setContact(!contact)} />
           </div>
           <div className='mobile'>

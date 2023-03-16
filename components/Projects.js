@@ -1,7 +1,7 @@
 import { projects } from '../data/projects'
-
+import { useClickOutside } from '../hooks/useClickOutside'
 import DetailsModal from './DetailsModal'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 export default function Projects({ dark }) {
   const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
@@ -61,6 +61,10 @@ export default function Projects({ dark }) {
   function Card({ p }) {
     const [show, setShow] = useState(false)
 
+    const detailRef = useRef(null)
+
+    useClickOutside(detailRef, () => setShow(false))
+
     const handleClose = () => {
       setShow(false)
       console.log('clicked')
@@ -78,7 +82,7 @@ export default function Projects({ dark }) {
             </div>
           </div>
         </div>
-        {show && <DetailsModal show={show} close={handleClose} p={p} dark={dark} />}
+        {show && <DetailsModal ref={detailRef} show={show} close={handleClose} p={p} dark={dark} />}
         <style jsx>
           {`
             .card {

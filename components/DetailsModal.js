@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, forwardRef } from 'react'
 import ReactDOM from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function DetailsModal({ p, show, close, dark }) {
+const DetailsModal = forwardRef(function DetailsModal({ p, show, close, dark }, detailRef) {
   const txtClr = dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'
   const txtClrSec = dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'
 
@@ -21,7 +21,7 @@ function DetailsModal({ p, show, close, dark }) {
   const content = (
     <>
       <div className='overlay'>
-        <div className='wrapper'>
+        <div ref={detailRef} className='wrapper'>
           <div className='container'>
             <div className='col col-left'>
               <button className='back' onClick={handleClick}>
@@ -48,7 +48,7 @@ function DetailsModal({ p, show, close, dark }) {
               <Link href={p.liveUrl}>
                 <a target='_blank'>
                   <div className='screen'>
-                    <Image src={`/img/scrshts/${p.imgUrl}`} layout='responsive' width={900} height={800} />
+                    <Image src={`/img/scrshts/${p.imgUrl}`} layout='fill' />
                   </div>
                 </a>
               </Link>
@@ -135,6 +135,8 @@ function DetailsModal({ p, show, close, dark }) {
           }
           .screen {
             position: relative;
+            width: 105%;
+            height: 66%;
           }
           .screen::after {
             content: 'Visit';
@@ -192,6 +194,6 @@ function DetailsModal({ p, show, close, dark }) {
   } else {
     return null
   }
-}
+})
 
 export default DetailsModal

@@ -30,7 +30,7 @@ export default function Projects({ dark }) {
           .wrapper {
             padding: 3rem;
             display: grid;
-            grid: auto-flow / 1fr 1fr 1fr;
+            grid: auto-flow / 1fr 1fr;
             gap: 2rem;
             margin: 0 auto;
             justify-items: center;

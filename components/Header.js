@@ -10,7 +10,7 @@ export default function Header({ toggleDark, dark, contactOpen, scrollTo }) {
     <>
       <header>
         <div className='logo new-logo'>
-          <img src='/img/jr-logo.svg' alt='' />
+          <img src='/img/jr-logo.png' alt='' />
         </div>
         <nav>
           <li>
@@ -71,10 +71,7 @@ export default function Header({ toggleDark, dark, contactOpen, scrollTo }) {
         }
 
         a:hover {
-          text-shadow: ${
-            dark &&
-            '0 0 5px var(--shadow), 0 0 10px var(--shadow), 0 0 15px var(--shadow), 0 0 20px var(--shadow), 0 0 25px var(--shadow);'
-          };
+          text-shadow: ${dark && '0 0 5px var(--shadow), 0 0 10px var(--shadow), 0 0 15px var(--shadow), 0 0 20px var(--shadow), 0 0 25px var(--shadow);'};
         }
         a::after {
           content: '';

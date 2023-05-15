@@ -34,8 +34,8 @@ export default function Home() {
           <meta name='twitter:image' content='https://i.postimg.cc/25VnCHkr/port-title-fixed.png' />
           <meta name='twitter:creator' content='@jRobertsWebDev' />
           <meta name='viewport' content='width=500' />
-          <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
-          <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+          <link rel='icon' type='image/png' sizes='32x32' href='/favicon.png' />
+          {/* <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' /> */}
         </Head>
         <div className='container'>
           <Header dark={dark} contactOpen={() => setContact(!contact)} toggleDark={() => setDark(!dark)} scrollTo={scrollTo} />

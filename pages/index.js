@@ -52,7 +52,6 @@ export default function Home() {
               <h2 className='desktop'>Full stack web developer</h2>
               <div className='text'>
                 <p>{bio}</p>
-                <p>I spend most of my time building things for the Internet</p>
                 <p>I love solving problems and making cool stuff with code.</p>
               </div>
 
@@ -76,7 +75,7 @@ export default function Home() {
             padding: 0.5rem 0.25rem 0.5rem 1rem;
           }
           .container {
-            min-height: calc(100vh - 15px);
+            padding-bottom: 10rem;
             background-color: ${dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             width: 100%;
             max-width: 1600px;
@@ -91,7 +90,7 @@ export default function Home() {
             justify-content: center;
           }
           .col {
-            padding: 10% 0 0 0;
+            padding: 0 0 0 0;
           }
 
           .bio {
@@ -174,7 +173,7 @@ export default function Home() {
               max-width: 500px;
             }
             .bio {
-              padding-top: 18%;
+              padding-top: 5%;
             }
           }
           @media (max-width: 950px) {
@@ -300,3 +299,5 @@ export default function Home() {
 //     props: { data, repos },
 //   }
 // }
+
+// min-height: calc(100vh - 15px);

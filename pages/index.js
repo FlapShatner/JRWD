@@ -10,10 +10,10 @@ import { useState, useRef } from 'react'
 export default function Home() {
   const projectsRef = useRef(null)
   const imageText = '</>'
-  const bio = 'I am a self-taught web developer who is obsessed with learning and honing my skills.'
+  const bio = 'I am a web developer / programming enthusiast who is obsessed with learning and honing my skills.'
 
   const email = 'Jordan@jRobertsWeb.dev'
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(false)
   const [contact, setContact] = useState(false)
 
   const scrollTo = () => {
@@ -72,7 +72,7 @@ export default function Home() {
       <style jsx>
         {`
           .wrapper {
-            padding: 0.5rem 0.25rem 0.5rem 1rem;
+            padding: 0.5rem 0.75rem 0.5rem 1.5rem;
           }
           .container {
             padding-bottom: 10rem;
@@ -119,7 +119,7 @@ export default function Home() {
             max-width: 400px;
             font-family: var(--ff-second);
             font-weight: 500;
-            font-size: 16px;
+            font-size: 1.25rem;
             margin-block: 1rem;
             color: ${dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
           }

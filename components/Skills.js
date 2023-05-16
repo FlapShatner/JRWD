@@ -93,6 +93,7 @@ export default function Skills({ dark }) {
             max-width: 1600px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
             margin: 0 auto;
           }
           .card {

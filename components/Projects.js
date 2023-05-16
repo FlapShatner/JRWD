@@ -21,14 +21,14 @@ export default function Projects({ dark }) {
       <style jsx>
         {`
           .container {
-            border: 2px solid ${txtClr};
+            border: none;
             border-radius: 55px;
             width: 100%;
             max-width: 1600px;
             margin: 0 auto;
           }
           .wrapper {
-            padding: 3rem;
+            padding: 0;
             display: grid;
             grid: auto-flow / 1fr 1fr;
             gap: 2rem;
@@ -57,6 +57,7 @@ export default function Projects({ dark }) {
       </style>
     </>
   )
+  // border: 2px solid ${txtClr};
 
   function Card({ p }) {
     const [show, setShow] = useState(false)
@@ -86,7 +87,7 @@ export default function Projects({ dark }) {
         <style jsx>
           {`
             .card {
-              max-width: 600px;
+              max-width: 800px;
               width: 100%;
               min-width: 300px;
               aspect-ratio: 1/1;

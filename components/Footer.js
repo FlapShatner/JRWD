@@ -35,7 +35,7 @@ export default function Footer({ dark }) {
             border-radius: 55px;
             width: 100%;
             max-width: 1600px;
-            margin: 0 auto;
+            margin: 2rem auto;
             display: flex;
             align-items: center;
           }

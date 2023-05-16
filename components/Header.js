@@ -1,11 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-
 import Link from 'next/link'
 
 export default function Header({ toggleDark, dark, contactOpen, scrollTo }) {
-  const darkToggle = dark ? 'Light' : 'Dark'
-
-  const logo = '{J}'
   return (
     <>
       <header>
@@ -63,7 +59,7 @@ export default function Header({ toggleDark, dark, contactOpen, scrollTo }) {
         a {
           cursor:pointer;
           position: relative;
-          font-family: var(--ff-poppins);
+          font-family: var(--ff-primary);
           font-size: 24px;
           font-weight: 500;
           color: ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'};

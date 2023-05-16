@@ -97,7 +97,7 @@ export default function Home() {
             width: 55%;
           }
           h1 {
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-primary);
             font-weight: 500;
             font-size: clamp(4rem, 2.7143rem + 2.2857vw, 5rem);
             color: ${dark ? 'var(--clr-text-dp)' : 'var(--clr-text-p)'};
@@ -107,7 +107,7 @@ export default function Home() {
           }
 
           h2 {
-            font-family: var(--ff-mont);
+            font-family: var(--ff-primary);
             font-size: clamp(1.5rem, 0.2143rem + 2.2857vw, 2.5rem);
             font-weight: 600;
             color: ${dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
@@ -117,7 +117,7 @@ export default function Home() {
           }
           p {
             max-width: 400px;
-            font-family: var(--ff-mont);
+            font-family: var(--ff-second);
             font-weight: 500;
             font-size: 16px;
             margin-block: 1rem;
@@ -125,7 +125,7 @@ export default function Home() {
           }
           .email {
             font-weight: 400;
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-primary);
             color: ${dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
             opacity: ${dark ? '50%' : '75%'};
           }

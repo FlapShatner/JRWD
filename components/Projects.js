@@ -36,7 +36,7 @@ export default function Projects({ dark }) {
             justify-items: center;
           }
           h2 {
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-primary);
             color: ${txtClr};
             font-size: 2.25rem;
             font-weight: 500;
@@ -122,14 +122,14 @@ export default function Projects({ dark }) {
               border-bottom-right-radius: 35px;
             }
             h4 {
-              font-family: var(--ff-poppins);
+              font-family: var(--ff-primary);
               color: ${txtClr};
               font-size: 1.5rem;
               text-align: center;
             }
             p,
             a {
-              font-family: var(--ff-poppins);
+              font-family: var(--ff-primary);
               font-weight: 500;
               color: ${txtClrSec};
               font-size: 1.25rem;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito&family=Poppins:wght@300;400;500;600;700;800;900&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Nanum+Gothic+Coding:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 *,
 *::before,
@@ -67,11 +67,9 @@ a {
 }
 
 :root {
-  --ff-heebo: "Heebo", sans-serif;
-  --ff-mont: "Montserrat", sans-serif;
-  --ff-nunito: "Nunito", sans-serif;
-  --ff-poppins: "Poppins", sans-serif;
-  --ff-rubik: "Rubik", sans-serif;
+  --ff-primary: "Inter Tight", sans-serif;
+  --ff-second: "Inter", sans-serif;
+  --ff-nanum: "Nanum Gothic Coding", sans-serif;
 
   --clr-bg-l: hsl(30, 100%, 99.2%);
   --clr-bg-d: hsl(120, 1.5%, 12.7%);

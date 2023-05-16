@@ -126,7 +126,7 @@ export const Email = ({ dark, close }) => {
           align-items: flex-end;
         }
         h2 {
-          font-family: var(--ff-poppins);
+          font-family: var(--ff-primary);
           font-weight: 400;
           color: ${txtClrInv};
 
@@ -142,7 +142,7 @@ export const Email = ({ dark, close }) => {
           border: 2px solid ${dark ? 'var(--clr-text-p)' : 'var(--clr-bg-l)'};
           border-radius: 15px;
           padding: 0 10px;
-          font-family: var(--ff-poppins);
+          font-family: var(--ff-primary);
           font-weight: 500;
           cursor: pointer;
           font-size: 14px;
@@ -161,14 +161,14 @@ export const Email = ({ dark, close }) => {
           margin: 1rem auto;
         }
         label {
-          font-family: var(--ff-poppins);
+          font-family: var(--ff-primary);
           color: ${txtClrInv};
         }
         input,
         textarea {
           border: none;
           background-color: var(--clr-text-ds);
-          font-family: var(--ff-mont);
+          font-family: var(--ff-second);
         }
         .send {
           margin-top: 1rem;
@@ -176,7 +176,7 @@ export const Email = ({ dark, close }) => {
           align-self: flex-end;
         }
         p {
-          font-family: var(--ff-mont);
+          font-family: var(--ff-second);
         }
         .err {
           color: red;

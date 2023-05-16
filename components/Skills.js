@@ -82,7 +82,7 @@ export default function Skills({ dark }) {
             width: 100%;
           }
           h2 {
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-primary);
             color: ${txtClr};
             font-size: 2.25rem;
             font-weight: 500;
@@ -102,7 +102,7 @@ export default function Skills({ dark }) {
           }
           h3 {
             display: block;
-            font-family: var(--ff-mont);
+            font-family: var(--ff-second);
             font-size: 1.5rem;
             width: max-content;
             color: ${txtClrSec};
@@ -124,7 +124,7 @@ export default function Skills({ dark }) {
             margin: 0.5rem;
             color: ${txtClrSec};
             font-size: 20px;
-            font-family: var(--ff-mont);
+            font-family: var(--ff-second);
             font-weight: 500;
           }
           img {

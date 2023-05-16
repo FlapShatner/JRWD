@@ -15,7 +15,7 @@ export const Github = ({ dark }) => {
       <style jsx>
         {`
           h2 {
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-primary);
             font-weight: 400;
             color: ${txtClrInv};
             cursor: pointer;

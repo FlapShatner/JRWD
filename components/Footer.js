@@ -63,7 +63,7 @@ export default function Footer({ dark }) {
           }
           a,
           p {
-            font-family: var(--ff-mont);
+            font-family: var(--ff-second);
             color: ${txtClrSec};
           }
           a {
@@ -71,7 +71,7 @@ export default function Footer({ dark }) {
           }
           h4 {
             color: ${txtClrSec};
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-primary);
             font-size: 24px;
             font-weight: 500;
           }

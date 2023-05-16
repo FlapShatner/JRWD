@@ -48,7 +48,7 @@ const DetailsModal = forwardRef(function DetailsModal({ p, show, close, dark }, 
               <Link href={p.liveUrl}>
                 <a target='_blank'>
                   <div className='screen'>
-                    <Image src={`/img/scrshts/${p.imgUrl}`} layout='fill' />
+                    <Image src={`/img/scrshts/${p.mockUrl}`} layout='fill' />
                   </div>
                 </a>
               </Link>
@@ -94,21 +94,21 @@ const DetailsModal = forwardRef(function DetailsModal({ p, show, close, dark }, 
           button {
             background-color: ${!dark ? 'var(--clr-bg-d)' : 'var(--clr-bg-l)'};
             color: ${!dark ? 'var(--clr-text-ds)' : 'var(--clr-text-s)'};
-            padding: 0.25rem 4rem;
-            font-family: var(--ff-poppins);
+            padding: 0.25rem 2rem;
+            font-family: var(--ff-primary);
             font-weight: 500;
-            margin: 2.25rem;
+            margin: 1.25rem 3rem;
             border-radius: 20px;
             cursor: pointer;
           }
           h2 {
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-primary);
             color: ${txtClr};
             font-size: 1.75rem;
           }
           a,
           p {
-            font-family: var(--ff-poppins);
+            font-family: var(--ff-second);
             font-weight: 500;
             color: ${txtClrSec};
             font-size: 1.125rem;
@@ -117,7 +117,6 @@ const DetailsModal = forwardRef(function DetailsModal({ p, show, close, dark }, 
           }
 
           .col {
-            width: 50%;
             position: relative;
           }
           .links {
@@ -130,17 +129,22 @@ const DetailsModal = forwardRef(function DetailsModal({ p, show, close, dark }, 
             font-size: 1.35rem;
             width: max-content;
           }
+          .col-left {
+            width: 40%;
+          }
           .col-right {
-            padding: 8rem 3rem 0 0;
+            width: 60%;
+            padding: 6rem 3rem 0 0;
           }
           .screen {
             position: relative;
-            width: 105%;
-            height: 66%;
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 20px;
           }
           .screen::after {
             content: 'Visit';
-            font-family: var(--ff-mont);
+            font-family: var(--ff-second);
             display: flex;
             justify-content: center;
             align-items: center;

@@ -27,7 +27,7 @@ export default function Home() {
           <title>Jordan Roberts</title>
           <meta property='og:title' content='Jordan Roberts' />
           <meta property='og:type' content='website' />
-          <meta property='og:description' content='Jordan Roberts, web developer' />
+          <meta property='og:description' content='Jordan Roberts, full stack web developer specializing in React' />
           <meta property='og:image' content='https://i.postimg.cc/yNFbH1zg/og-portfolio.png' />
           <meta property='og:url' content='https://www.jrobertsweb.dev/' />
           <meta name='twitter:card' content='summary_large_image' />
